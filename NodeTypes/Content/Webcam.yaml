@@ -1,0 +1,70 @@
+'Lala.Webcam:Content.Webcam':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: i18n
+    icon: 'icon-video'
+    group: general
+    position: 400
+    inspector:
+      groups:
+        webcam:
+          label: i18n
+          icon: 'icon-video'
+          position: 10
+        upload:
+          label: i18n
+          icon: 'icon-upload'
+          position: 20
+      views:
+        uploadInfo:
+          label: i18n
+          group: upload
+          position: 20
+          view: 'Neos.Neos/Inspector/Views/Data/TableView'
+          viewOptions:
+            dataSource: 'lala-webcam-upload-info'
+            collection: 'rows'
+            columns:
+              - data: 'label'
+              - data: 'value'
+
+  properties:
+    alternativeText:
+      type: string
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: webcam
+          position: 10
+
+    refreshInterval:
+      type: integer
+      defaultValue: 5
+      ui:
+        label: i18n
+        help:
+          message: i18n
+        reloadIfChanged: true
+        inspector:
+          group: webcam
+          position: 20
+      validation:
+        'Neos.Neos/Validation/IntegerValidator': []
+        'Neos.Neos/Validation/NumberRangeValidator':
+          minimum: 0
+          maximum: 1440
+
+    uploadToken:
+      type: string
+      ui:
+        label: i18n
+        help:
+          message: i18n
+        inspector:
+          group: upload
+          position: 10
+      validation:
+        'Neos.Neos/Validation/RegularExpressionValidator':
+          regularExpression: '/^[A-Za-z0-9_-]{32,255}$/'

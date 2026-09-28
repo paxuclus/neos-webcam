@@ -1,0 +1,62 @@
+Lala:
+  Webcam:
+    # Uploads larger than this are rejected (bytes)
+    maximumFileSize: 10485760
+    # How many images to keep per webcam. Only the newest one is shown, the previous one stays
+    # available for pages and API responses that are still cached with its URL.
+    keepSnapshots: 2
+    # How long browsers and proxies may cache the "current image" API response (seconds)
+    statusMaximumAge: 60
+
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'Lala.Webcam':
+          position: 'before Neos.Neos'
+
+    resource:
+      storages:
+        lalaWebcamStorage:
+          storage: 'Neos\Flow\ResourceManagement\Storage\WritableFileSystemStorage'
+          storageOptions:
+            path: '%FLOW_PATH_DATA%Persistent/Lala.Webcam/'
+      collections:
+        lalaWebcam:
+          storage: 'lalaWebcamStorage'
+          target: 'lalaWebcamTarget'
+      targets:
+        lalaWebcamTarget:
+          target: 'Neos\Flow\ResourceManagement\Target\FileSystemSymlinkTarget'
+          targetOptions:
+            path: '%FLOW_PATH_WEB%_Resources/Webcam/'
+            baseUri: '_Resources/Webcam/'
+            relativeSymlinks: true
+
+  Neos:
+    Ui:
+      resources:
+        stylesheets:
+          'Lala.Webcam:Inspector':
+            resource: 'resource://Lala.Webcam/Public/Inspector.css'
+
+    fusion:
+      autoInclude:
+        'Lala.Webcam': true
+    userInterface:
+      translation:
+        autoInclude:
+          'Lala.Webcam':
+            - 'NodeTypes/*'
+
+  Fusion:
+    defaultContext:
+      Lala.Webcam: Lala\Webcam\Eel\WebcamHelper
+
+  ContentRepositoryRegistry:
+    presets:
+      'default':
+        contentGraphProjection:
+          catchUpHooks:
+            'Lala.Webcam:RemoveSnapshots':
+              factoryObjectName: Lala\Webcam\CatchUpHook\WebcamRemovalCatchUpHookFactory

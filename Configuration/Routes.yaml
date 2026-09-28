@@ -1,0 +1,21 @@
+-
+  name: 'Latest webcam image'
+  uriPattern: 'api/webcam/{nodeAggregateId}'
+  httpMethods: ['GET', 'HEAD']
+  defaults:
+    '@package': 'Lala.Webcam'
+    '@controller': 'Webcam'
+    '@action': 'show'
+    '@format': 'json'
+  appendExceedingArguments: false
+
+-
+  name: 'Upload webcam image'
+  uriPattern: 'api/webcam/{nodeAggregateId}'
+  httpMethods: ['POST']
+  defaults:
+    '@package': 'Lala.Webcam'
+    '@controller': 'Webcam'
+    '@action': 'upload'
+    '@format': 'json'
+  appendExceedingArguments: false

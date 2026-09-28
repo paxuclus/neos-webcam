@@ -1,0 +1,41 @@
+prototype(Lala.Webcam:Content.Webcam) < prototype(Neos.Neos:ContentComponent) {
+    snapshot = ${Lala.Webcam.latestSnapshot(node)}
+    alternativeText = ${q(node).property('alternativeText')}
+    refreshInterval = ${q(node).property('refreshInterval')}
+
+    scriptUri = Neos.Fusion:ResourceUri {
+        path = 'resource://Lala.Webcam/Public/Webcam.js'
+    }
+
+    statusUri = Neos.Fusion:ActionUri {
+        package = 'Lala.Webcam'
+        controller = 'Webcam'
+        action = 'show'
+        format = 'json'
+        arguments.nodeAggregateId = ${node.aggregateId.value}
+    }
+
+    renderer = afx`
+        <lala-webcam
+            data-status-uri={props.refreshInterval > 0 ? props.statusUri : null}
+            data-refresh-interval={props.refreshInterval}
+            data-alt={props.alternativeText}
+        >
+            <img
+                @if={props.snapshot}
+                src={props.snapshot.uri}
+                width={props.snapshot.width}
+                height={props.snapshot.height}
+                alt={props.alternativeText}
+                loading="lazy"
+                decoding="async"
+            />
+            <p @if={!props.snapshot && renderingMode.isEdit}>
+                {I18n.translate('Lala.Webcam:Main:webcam.noImage')}
+            </p>
+            <style>{':where(lala-webcam){display:block}:where(lala-webcam img){display:block;max-width:100%;height:auto}'}</style>
+            <script @if={props.refreshInterval > 0} type="module" src={props.scriptUri}></script>
+        </lala-webcam>
+    `
+}
+

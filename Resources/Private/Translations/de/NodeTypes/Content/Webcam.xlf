@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Lala.Webcam" source-language="en" datatype="plaintext" target-language="de">
+    <body>
+      <trans-unit id="ui.label" xml:space="preserve">
+        <source>Webcam</source>
+        <target state="final">Webcam</target>
+      </trans-unit>
+      <trans-unit id="groups.webcam" xml:space="preserve">
+        <source>Webcam</source>
+        <target state="final">Webcam</target>
+      </trans-unit>
+      <trans-unit id="groups.upload" xml:space="preserve">
+        <source>Upload</source>
+        <target state="final">Upload</target>
+      </trans-unit>
+      <trans-unit id="views.uploadInfo" xml:space="preserve">
+        <source>Upload settings for the webcam</source>
+        <target state="final">Upload-Einstellungen für die Webcam</target>
+      </trans-unit>
+      <trans-unit id="properties.alternativeText" xml:space="preserve">
+        <source>Alternative text</source>
+        <target state="final">Alternativtext</target>
+      </trans-unit>
+      <trans-unit id="properties.refreshInterval" xml:space="preserve">
+        <source>Refresh interval (minutes)</source>
+        <target state="final">Aktualisierung im Browser (Minuten)</target>
+      </trans-unit>
+      <trans-unit id="properties.refreshInterval.ui.help.message" xml:space="preserve">
+        <source>How often an open page checks for a new image. 0 disables it.</source>
+        <target state="final">Wie oft eine geöffnete Seite nach einem neuen Bild schaut. 0 schaltet das ab.</target>
+      </trans-unit>
+      <trans-unit id="properties.uploadToken" xml:space="preserve">
+        <source>Upload token</source>
+        <target state="final">Upload-Token</target>
+      </trans-unit>
+      <trans-unit id="properties.uploadToken.ui.help.message" xml:space="preserve">
+        <source>Secret the webcam sends along with each image. 32 to 255 characters, only letters, digits, "-" and "_". The element has to be published and visible before images can be uploaded.</source>
+        <target state="final">Geheimnis, das die Webcam bei jedem Bild mitschickt. 32 bis 255 Zeichen, nur Buchstaben, Ziffern, "-" und "_". Das Element muss veröffentlicht und sichtbar sein, bevor Bilder hochgeladen werden können.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,9 @@
+/* Lets the upload URL and curl command in the inspector wrap instead of being cut off */
+#neos-Inspector table td:first-child {
+    white-space: nowrap;
+    vertical-align: top;
+}
+
+#neos-Inspector table td:last-child {
+    overflow-wrap: anywhere;
+}

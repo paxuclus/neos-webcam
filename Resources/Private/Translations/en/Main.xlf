@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="" product-name="Lala.Webcam" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="uploadInfo.status.label" xml:space="preserve">
+        <source>Status</source>
+      </trans-unit>
+      <trans-unit id="uploadInfo.notPublished" xml:space="preserve">
+        <source>Publish this element and make it visible before uploading images.</source>
+      </trans-unit>
+      <trans-unit id="uploadInfo.missingToken" xml:space="preserve">
+        <source>Set a valid upload token and publish the change.</source>
+      </trans-unit>
+      <trans-unit id="uploadInfo.tokenSuggestion.label" xml:space="preserve">
+        <source>Suggestion</source>
+      </trans-unit>
+      <trans-unit id="uploadInfo.uploadUri.label" xml:space="preserve">
+        <source>Upload URL</source>
+      </trans-unit>
+      <trans-unit id="uploadInfo.curl.label" xml:space="preserve">
+        <source>curl</source>
+      </trans-unit>
+      <trans-unit id="uploadInfo.lastUpload.label" xml:space="preserve">
+        <source>Last image</source>
+      </trans-unit>
+      <trans-unit id="uploadInfo.noUploadYet" xml:space="preserve">
+        <source>None yet</source>
+      </trans-unit>
+      <trans-unit id="webcam.noImage" xml:space="preserve">
+        <source>No webcam image has been uploaded yet.</source>
+      </trans-unit>
+      <trans-unit id="uploadInfo.notAllowed" xml:space="preserve">
+        <source>Only editors who may publish to the live site can see the upload settings.</source>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

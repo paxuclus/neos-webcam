@@ -1,0 +1,10 @@
+privilegeTargets:
+  'Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege':
+    'Lala.Webcam:Api':
+      matcher: 'method(Lala\Webcam\Controller\WebcamController->(show|upload)Action())'
+
+roles:
+  'Neos.Flow:Everybody':
+    privileges:
+      - privilegeTarget: 'Lala.Webcam:Api'
+        permission: GRANT

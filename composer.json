@@ -1,0 +1,26 @@
+{
+    "name": "lala/neos-webcam",
+    "description": "Neos content element showing a webcam image that is pushed to Neos via HTTP",
+    "type": "neos-package",
+    "license": "MIT",
+    "keywords": ["neos", "neoscms", "webcam", "flow"],
+    "require": {
+        "php": "^8.2",
+        "neos/neos": "^9.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lala\\Webcam\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lala\\Webcam\\Tests\\": "Tests/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Lala.Webcam"
+        }
+    }
+}
